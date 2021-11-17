@@ -40,10 +40,3 @@ spec:
                   name: openshift-gitops-operator
                   source: redhat-operators
                   sourceNamespace: openshift-marketplace
-            - complianceType: mustnothave
-              objectDefinition:
-                apiVersion: pipelines.openshift.io/v1alpha1
-                kind: GitopsService
-                metadata:
-                  name: cluster
-                spec: {}           
