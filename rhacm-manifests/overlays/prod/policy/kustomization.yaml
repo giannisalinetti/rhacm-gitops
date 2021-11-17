@@ -1,0 +1,3 @@
+resources:
+  - PlacementbindingOpenshiftGitops.yaml
+  - PolicyOpenshiftGitops.yaml
