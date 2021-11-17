@@ -5,3 +5,4 @@ bases:
 resources:
   - OpenshiftGitopsPlacementrule.yaml
   - OpenshiftGitopsAppsSubscription.yaml
+  - OpenshiftGitopsSubscription.yaml
