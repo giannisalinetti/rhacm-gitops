@@ -27,6 +27,15 @@ spec:
           object-templates:
             - complianceType: musthave
               objectDefinition:
+                apiVersion: v1
+                kind: Namespace
+                metadata:
+                  name: openshift-gitops
+                spec:
+                  finalizers:
+                  - kubernetes
+            - complianceType: musthave
+              objectDefinition:
                 apiVersion: operators.coreos.com/v1alpha1
                 kind: Subscription
                 metadata:
