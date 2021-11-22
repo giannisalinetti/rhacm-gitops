@@ -19,9 +19,7 @@ To start using this repo you can fork it and adapt it to your environment.
 This is a GitOps folder-based structure model.
 
 * [_rhacm-manifests_](rhacm-manifests): contains Red Hat Advanced Cluster Management manifests.
-* [_gitops-manifests_](gitops-manifests)
-  * [_operator_](gitops-manifests/operator): contains OpenShift GitOps operator's manifests.
-  * [_resources_](gitops-manifests/resources): contains Argo CD resources, such as AppProjects, Applications and ApplicationSets.
+* [_gitops-manifests_](gitops-manifests): contains Argo CD resources, such as AppProjects, Applications and ApplicationSets.
 
 ### Why folder-based strategy and not branched-based
 The folder-based approach has the following main advantages:
@@ -51,7 +49,6 @@ To use this repo you need to have in your enviroment:
   * Subscription for OpenShift GitOps operator configurations
   * Subscription for Argo CD resources (i.e. AppProjects, Applications, ApplicationSets)
   * Application
-  * AnsibleJobs for application
 
 ## Procedure to move OpenShift GitOps from Active to Backup OpenShift Cluster
 First you need to have another OpenShift cluster on which you have installed

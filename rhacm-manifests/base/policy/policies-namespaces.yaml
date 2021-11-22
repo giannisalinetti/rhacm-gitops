@@ -1,0 +1,101 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: placement-nschannelocpgitops-namespace
+  namespace: openshift-gitops
+spec:
+  clusterConditions:
+  - status: "True"
+    type: ManagedClusterConditionAvailable
+  clusterSelector:
+    matchExpressions: []
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: binding-nschannelocpgitops-namespace
+  namespace: openshift-gitops
+placementRef:
+  apiGroup: apps.open-cluster-management.io
+  kind: PlacementRule
+  name: placement-nschannelocpgitops-namespace
+subjects:
+- apiGroup: policy.open-cluster-management.io
+  kind: Policy
+  name: nschannelocpgitops-namespace
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: binding-openshift-gitops-namespace
+  namespace: openshift-gitops
+placementRef:
+  apiGroup: apps.open-cluster-management.io
+  kind: PlacementRule
+  name: openshift-gitops-placementrule
+subjects:
+- apiGroup: policy.open-cluster-management.io
+  kind: Policy
+  name: openshift-gitops-namespace
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: Policy
+metadata:
+  annotations:
+    policy.open-cluster-management.io/categories: CM Configuration Management
+    policy.open-cluster-management.io/controls: CM-2 Baseline Configuration
+    policy.open-cluster-management.io/standards: NIST SP 800-53
+  name: nschannelocpgitops-namespace
+  namespace: openshift-gitops
+spec:
+  disabled: false
+  policy-templates:
+  - objectDefinition:
+      apiVersion: policy.open-cluster-management.io/v1
+      kind: ConfigurationPolicy
+      metadata:
+        name: nschannelocpgitops-namespace
+      spec:
+        object-templates:
+        - complianceType: musthave
+          objectDefinition:
+            apiVersion: v1
+            kind: Namespace
+            metadata:
+              name: nschannelocpgitops
+            spec:
+              finalizers:
+              - kubernetes
+        remediationAction: enforce
+        severity: low
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: Policy
+metadata:
+  annotations:
+    policy.open-cluster-management.io/categories: CM Configuration Management
+    policy.open-cluster-management.io/controls: CM-2 Baseline Configuration
+    policy.open-cluster-management.io/standards: NIST SP 800-53
+  name: openshift-gitops-namespace
+  namespace: openshift-gitops
+spec:
+  disabled: false
+  policy-templates:
+  - objectDefinition:
+      apiVersion: policy.open-cluster-management.io/v1
+      kind: ConfigurationPolicy
+      metadata:
+        name: openshift-gitops-namespace
+      spec:
+        object-templates:
+        - complianceType: musthave
+          objectDefinition:
+            apiVersion: v1
+            kind: Namespace
+            metadata:
+              name: openshift-gitops
+            spec:
+              finalizers:
+              - kubernetes
+        remediationAction: enforce
+        severity: low

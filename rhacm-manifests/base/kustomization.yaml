@@ -3,4 +3,4 @@ resources:
   - ApplicationOpenshiftGitops.yaml
   - NamespaceOpenshiftGitops.yaml
   - NamespaceChannelOpenshiftGitops.yaml
-
+  - policy/policies-namespaces.yaml
