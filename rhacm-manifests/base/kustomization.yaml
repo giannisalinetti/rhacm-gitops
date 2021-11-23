@@ -1,3 +1,4 @@
 resources:
   - ChannelOpenshiftGitops.yaml
   - ApplicationOpenshiftGitops.yaml
+  - NamespaceChannelOpenshiftGitops.yaml
