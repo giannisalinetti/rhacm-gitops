@@ -11,7 +11,7 @@ metadata:
     apps.open-cluster-management.io/deployables: ''
     apps.open-cluster-management.io/git-branch: testing
     apps.open-cluster-management.io/git-current-commit: ''
-    apps.open-cluster-management.io/git-path: gitops-manifests/prod
+    apps.open-cluster-management.io/git-path: gitops-manifests/prod/projects/default/appset
     apps.open-cluster-management.io/reconcile-option: replace
 spec:
   channel: nschannelocpgitops/channelopenshiftgitops
