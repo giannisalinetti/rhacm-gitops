@@ -1,2 +1,2 @@
 resources:
-  - projects/default/appset/pricelist-example.yaml
+  - projects/default/appset/guestbook.yaml
