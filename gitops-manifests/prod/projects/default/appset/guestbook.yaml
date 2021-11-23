@@ -1,20 +1,31 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: guestbook
+  name: pricelist
+  namespace: openshift-gitops
 spec:
   generators:
-  - clusters: {} # This is a generator, specifically, a cluster generator.
-  template: 
-    # This is a template Argo CD Application, but with support for parameter substitution.
+  - git:
+      repoURL: https://github.com/christianh814/gitops-examples
+      revision: master
+      directories:
+      - path: applicationsets/git-dir-generator/apps/*
+  template:
     metadata:
-      name: '{{name}}-guestbook'
+      name: '{{path.basename}}'
+      namespace: openshift-gitops
     spec:
-      project: "default"
+      project: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
       source:
-        repoURL: https://github.com/argoproj/argocd-example-apps/
-        targetRevision: HEAD
-        path: guestbook
+        repoURL: https://github.com/christianh814/gitops-examples
+        targetRevision: master
+        path: '{{path}}'
       destination:
-        server: '{{server}}'
-        namespace: guestbook
+        server: https://kubernetes.default.svc
+        namespace: pricelist
