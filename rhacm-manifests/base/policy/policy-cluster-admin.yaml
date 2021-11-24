@@ -41,7 +41,7 @@ spec:
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
-  name: binding-policy-auth-provider
+  name: binding-policy-cluster-admin
   namespace: openshift-gitops
 placementRef:
   name: placementrule-infrastructure-policies
