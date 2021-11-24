@@ -1,0 +1,54 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: Policy
+metadata:
+  name: policy-disable-project-self-provisioning
+  namespace: openshift-gitops
+  annotations:
+    policy.open-cluster-management.io/standards: NIST-CSF
+    policy.open-cluster-management.io/categories: PR.IP Information Protection Processes and Procedures
+    policy.open-cluster-management.io/controls: PR.IP-1 Baseline configuration
+spec:
+  complianceType: mustonlyhave
+  remediationAction: enforce
+  disabled: false
+  policy-templates:
+  - objectDefinition:
+      apiVersion: policy.open-cluster-management.io/v1
+      kind: ConfigurationPolicy
+      metadata:
+        name: policy-disable-project-self-provisioning
+      spec:
+        remediationAction: enforce
+        severity: low
+        namespaceSelector:
+          exclude:
+            - kube-*
+          include:
+            - default
+        object-templates:
+          - complianceType: mustnothave
+            objectDefinition:
+              apiVersion: rbac.authorization.k8s.io/v1
+              kind: ClusterRoleBinding
+              metadata:
+                annotations:
+                  rbac.authorization.kubernetes.io/autoupdate: "false"
+                name: self-provisioners
+              roleRef:
+                apiGroup: rbac.authorization.k8s.io
+                kind: ClusterRole
+                name: self-provisioner
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: binding-policy-disable-project-self-provisioning
+  namespace: openshift-gitops
+placementRef:
+  name: placementrule-infrastructure-policies
+  kind: PlacementRule
+  apiGroup: apps.open-cluster-management.io
+subjects:
+- name: policy-disable-project-self-provisioning
+  kind: Policy
+  apiGroup: policy.open-cluster-management.io
