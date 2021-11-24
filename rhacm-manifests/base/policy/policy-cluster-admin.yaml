@@ -48,6 +48,6 @@ placementRef:
   kind: PlacementRule
   apiGroup: apps.open-cluster-management.io
 subjects:
-- name: policy-auth-provider
+- name: policy-cluster-admin
   kind: Policy
   apiGroup: policy.open-cluster-management.io
