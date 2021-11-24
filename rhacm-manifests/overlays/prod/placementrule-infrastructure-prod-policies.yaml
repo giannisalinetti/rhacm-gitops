@@ -4,9 +4,6 @@ metadata:
   name: placementrule-infrastructure-policies
   namespace: openshift-gitops
 spec:
-  clusterConditions:
-  - status: "True"
-    type: ManagedClusterConditionAvailable
   clusterSelector:
     matchLabels:
       environment: lab

@@ -7,3 +7,4 @@ resources:
   - policy/policy-auth-provider.yaml
   - policy/policy-cluster-admin.yaml
   - policy/policy-remove-kubeadmin.yaml
+  - placementrule-infrastructure-policies.yaml
