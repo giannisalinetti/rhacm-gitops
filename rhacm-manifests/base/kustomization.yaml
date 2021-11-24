@@ -5,5 +5,4 @@ resources:
   - channel-openshift-gitops.yaml
   - application-openshift-gitops.yaml
   - policy/policy-auth-provider.yaml
-  - policy/placementrule-all-clusters.yaml
 
