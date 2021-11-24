@@ -7,3 +7,4 @@ resources:
   - policy/policy-openshift-gitops.yaml
   - placementrule-openshift-gitops.yaml
   - subscription-openshift-gitops-apps.yaml
+  - placementrule-infrastructure-policies.yaml
