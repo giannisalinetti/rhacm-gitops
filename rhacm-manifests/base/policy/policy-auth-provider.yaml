@@ -52,7 +52,7 @@ metadata:
   name: binding-policy-auth-provider
   namespace: openshift-gitops
 placementRef:
-  name: placementrule-all-clusters
+  name: placementrule-infrastructure-policies
   kind: PlacementRule
   apiGroup: apps.open-cluster-management.io
 subjects:

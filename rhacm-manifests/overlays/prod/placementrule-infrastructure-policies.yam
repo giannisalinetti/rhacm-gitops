@@ -1,7 +1,7 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: placementrule-all-clusters
+  name: placementrule-infrastructure-policies
   namespace: openshift-gitops
 spec:
   clusterConditions:
@@ -9,4 +9,4 @@ spec:
     type: ManagedClusterConditionAvailable
   clusterSelector:
     matchLabels:
-      vendor: OpenShift
+      environment: lab
