@@ -1,8 +1,4 @@
-# Argo CD Resources
-
-## 00appproj folder
-The _00appproj_ folder contains all Argo CD AppProject resources that
-are defined on every managed OpenShift GitOps instances.
+# OpenShift GitOps Argo CD Resources
 
 ## Overlays structure
 Each folder is meant to be an overlay which collects all the resources
@@ -20,18 +16,24 @@ Below a few structure examples.
   │   ├── kustomization.yaml
   │   └── projects
   │       ├── default
+  |       │   ├── kustomization.yaml
   │       │   ├── app
   │       │   └── appset
   │       └── myproject
+  |           ├── kustomization.yaml
+  |           ├── app-project-myproject.yaml
   │           ├── app
   │           └── appset
   └── stage
       ├── kustomization.yaml
       └── projects
           ├── default
+          │   ├── kustomization.yaml
           │   ├── app
           │   └── appset
           └── myproject
+              ├── kustomization.yaml
+              ├── app-project-myproject.yaml
               ├── app
               └── appset
   ```
@@ -46,18 +48,24 @@ Below a few structure examples.
   │   ├── kustomization.yaml
   │   └── projects
   │       ├── default
+  |       |   ├── kustomization.yaml
   │       │   ├── app
   │       │   └── appset
   │       └── myproject
+  |           ├── kustomization.yaml
+  |           ├── app-project-myproject.yaml
   │           ├── app
   │           └── appset
   └── gcp
       ├── kustomization.yaml
       └── projects
           ├── default
+          |   ├── kustomization.yaml
           │   ├── app
           │   └── appset
           └── myproject
+              ├── kustomization.yaml
+              ├── app-project-myproject.yaml
               ├── app
               └── appset
   ```
@@ -72,36 +80,48 @@ Below a few structure examples.
   │   ├── kustomization.yaml
   │   └── projects
   │       ├── default
+  |       |   ├── kustomization.yaml
   │       │   ├── app
   │       │   └── appset
   │       └── myproject
+  |           ├── kustomization.yaml
+  |           ├── app-project-myproject.yaml
   │           ├── app
   │           └── appset
   ├── prod-gcp
   │   ├── kustomization.yaml
   │   └── projects
   │       ├── default
+  |       |   ├── kustomization.yaml
   │       │   ├── app
   │       │   └── appset
   │       └── myproject
+  |           ├── kustomization.yaml
+  |           ├── app-project-myproject.yaml
   │           ├── app
   │           └── appset
   ├── stage-azure
   │   ├── kustomization.yaml
   │   └── projects
   │       ├── default
+  |       |   ├── kustomization.yaml
   │       │   ├── app
   │       │   └── appset
   │       └── myproject
+  |           ├── kustomization.yaml
+  |           ├── app-project-myproject.yaml
   │           ├── app
   │           └── appset
   └── stage-gcp
       ├── kustomization.yaml
       └── projects
           ├── default
+          |   ├── kustomization.yaml
           │   ├── app
           │   └── appset
           └── myproject
+              ├── kustomization.yaml
+              ├── app-project-myproject.yaml
               ├── app
               └── appset
   ```
