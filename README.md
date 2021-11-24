@@ -55,27 +55,3 @@ To use this repo you need to have in your enviroment:
     * Cluster Admin role binding configuration;
     * Kubeadmin user deletion;  
 
-## Procedure to move OpenShift GitOps from Active to Backup OpenShift Cluster
-First you need to have another OpenShift cluster on which you have installed
-OpenShift GitOps operator. \
-Then to switch from Active to Backup OpenShift cluster perform the following
-steps on RHACM:
-* Delete apps Subscription.
-  * To maintain Argo CD resources of the Application - such as Deployments,
-    Services, etc - set the `.spec.syncPolicy.preserveResourcesOnDeletion`
-    value to `true` in the parent ApplicationsSet, as follow:
-    ```
-    kind: ApplicationSet
-    spec:
-      generators:
-        - clusters: {}
-      template:
-        # (...)
-      syncPolicy:
-        # Don't delete Application's child resources, on parent deletion:
-        preserveResourcesOnDeletion: true
-    ```
-  * See Argo CD documentation on [Application Deletion](https://argocd-applicationset.readthedocs.io/en/stable/Application-Deletion/).
-* Edit PlacementRule to deploy Argo CD to Backup cluster.
-* Wait until Argo CD server status is `Phase: Available` on Backup cluster.
-* Redeploy apps Subscription.
