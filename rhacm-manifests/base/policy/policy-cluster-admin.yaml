@@ -1,7 +1,7 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
-  name: policy-auth-provider
+  name: policy-cluster-admin
   namespace: openshift-gitops
   annotations:
     policy.open-cluster-management.io/standards: NIST-CSF
