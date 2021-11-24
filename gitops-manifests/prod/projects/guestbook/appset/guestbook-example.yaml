@@ -1,21 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: pricelist-test2
+  name: guestbook
   namespace: openshift-gitops
 spec:
   generators:
   - git:
-      repoURL: https://github.com/christianh814/gitops-examples
+      repoURL: https://github.com/argoproj/argocd-example-apps
       revision: master
       directories:
-      - path: applicationsets/git-dir-generator/apps/*
+      - path: guestbook
   template:
     metadata:
       name: '{{path.basename}}'
       namespace: openshift-gitops
     spec:
-      project: appset
+      project: guestbook
       syncPolicy:
         automated:
           prune: true
@@ -23,9 +23,9 @@ spec:
         syncOptions:
         - CreateNamespace=true
       source:
-        repoURL: https://github.com/christianh814/gitops-examples
+        repoURL: https://github.com/argoproj/argocd-example-apps
         targetRevision: master
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: pricelist-test2
+        namespace: guestbook

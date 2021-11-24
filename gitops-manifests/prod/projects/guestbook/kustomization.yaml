@@ -1,0 +1,4 @@
+
+resources:
+  - app-project-guestbook.yaml
+  - appset/guestbook-example.yaml
