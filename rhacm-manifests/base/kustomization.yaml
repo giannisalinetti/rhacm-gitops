@@ -6,3 +6,4 @@ resources:
   - application-openshift-gitops.yaml
   - policy/policy-auth-provider.yaml
   - policy/policy-cluster-admin.yaml
+  - policy/policy-remove-kubeadmin.yaml
