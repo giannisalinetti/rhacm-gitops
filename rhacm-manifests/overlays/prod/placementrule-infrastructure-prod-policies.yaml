@@ -1,9 +1,8 @@
-apiVersion: apps.open-cluster-management.io/v1
-kind: PlacementRule
-metadata:
-  name: placementrule-infrastructure-policies
-  namespace: openshift-gitops
-spec:
-  clusterSelector:
+- op: replace
+  path: /metadata/name
+  value: placementrule-infrastructure-policies-prod
+- op: add
+  path: /spec/clusterSelectors
+  value: 
     matchLabels:
       environment: lab

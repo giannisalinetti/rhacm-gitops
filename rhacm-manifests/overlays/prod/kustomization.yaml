@@ -7,5 +7,17 @@ resources:
   - policy/policy-openshift-gitops.yaml
   - placementrule-openshift-gitops.yaml
   - subscription-openshift-gitops-apps.yaml
-patchesStrategicMerge:
-  - placementrule-infrastructure-prod-policies.yaml
+#patchesStrategicMerge:
+#- placementrule-infrastructure-prod-policies.yaml
+
+patches:
+- path: placementrule-infrastructure-prod-policies.yaml
+  target: 
+    kind: PlacementRule 
+    name: placementrule-infrastructure-policies
+    namespace: openshift-gitops
+- path: binding-policy-prod.yaml
+  target: 
+    kind: PlacementBinding
+    name: binding-policy
+    namespace: openshift-gitops

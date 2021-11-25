@@ -38,17 +38,3 @@ spec:
                 apiGroup: rbac.authorization.k8s.io
                 kind: ClusterRole
                 name: self-provisioner
----
-apiVersion: policy.open-cluster-management.io/v1
-kind: PlacementBinding
-metadata:
-  name: binding-policy-disable-project-self-provisioning
-  namespace: openshift-gitops
-placementRef:
-  name: placementrule-infrastructure-policies
-  kind: PlacementRule
-  apiGroup: apps.open-cluster-management.io
-subjects:
-- name: policy-disable-project-self-provisioning
-  kind: Policy
-  apiGroup: policy.open-cluster-management.io

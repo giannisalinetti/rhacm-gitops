@@ -45,17 +45,3 @@ spec:
               name: htpass-secret
               namespace: openshift-config
             type: Opaque
----
-apiVersion: policy.open-cluster-management.io/v1
-kind: PlacementBinding
-metadata:
-  name: binding-policy-auth-provider
-  namespace: openshift-gitops
-placementRef:
-  name: placementrule-infrastructure-policies
-  kind: PlacementRule
-  apiGroup: apps.open-cluster-management.io
-subjects:
-- name: policy-auth-provider
-  kind: Policy
-  apiGroup: policy.open-cluster-management.io

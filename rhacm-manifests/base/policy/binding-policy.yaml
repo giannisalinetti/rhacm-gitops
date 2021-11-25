@@ -1,0 +1,25 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: binding-policy
+  namespace: openshift-gitops
+placementRef:
+  name: placementrule-infrastructure-policies
+  kind: PlacementRule
+  apiGroup: apps.open-cluster-management.io
+subjects:
+- name: policy-auth-provider
+  kind: Policy
+  apiGroup: policy.open-cluster-management.io
+- name: policy-cluster-admin
+  kind: Policy
+  apiGroup: policy.open-cluster-management.io
+- name: policy-remove-kubeadmin
+  kind: Policy
+  apiGroup: policy.open-cluster-management.io
+- name: policy-disable-project-self-provisioning
+  kind: Policy
+  apiGroup: policy.open-cluster-management.io
+- name: policy-monitoring-configmap
+  kind: Policy
+  apiGroup: policy.open-cluster-management.io

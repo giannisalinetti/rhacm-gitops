@@ -1,0 +1,6 @@
+- op: replace
+  path: /metadata/name
+  value: binding-policy-prod
+- op: replace
+  path: /placementRef/name
+  value: placementrule-infrastructure-policies-prod
