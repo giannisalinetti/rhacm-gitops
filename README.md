@@ -48,7 +48,7 @@ To use this repo you need to have in your enviroment:
   ```
   clone repository
   navigate to root folder 
-  oc apply -k rhacm-gitops/rhacm-manifests/overlays/prod/
+  oc apply -k rhacm-gitops-example/rhacm-manifests/overlays/prod/
   ```
 
   This will create the following resources:
