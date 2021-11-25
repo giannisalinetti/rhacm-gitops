@@ -15,6 +15,14 @@ It provides:
 
 To start using this repo you can fork it and adapt it to your environment.
 
+## How to use Kustomize
+This repo extensively uses [Kustomize](https://kustomize.io/) to patch resources to be applied to different environments.
+Kustomize is a template-free solution for customizing Kubernetes resources based on the declarative patching of original YAML files.
+The base files are located in **base** folders while their customizations can be defined inside **overlay** folders where users
+can define multiple target environments and differenet customization behaviors, declared in a `kustomization.yaml` file.
+
+For more informations about Kustomize, please refer to the following [guide](https://kubectl.docs.kubernetes.io/guides/introduction/kustomize/).
+
 ## Repository structure model
 This is a GitOps folder-based structure model.
 
