@@ -1,8 +1,8 @@
 - op: replace
   path: /metadata/name
-  value: placementrule-infrastructure-policies-prod
+  value: placementrule-infrastructure-policies-test
 - op: add
   path: /spec/clusterSelector
   value: 
     matchLabels:
-      environment: lab
+      environment: testlab
