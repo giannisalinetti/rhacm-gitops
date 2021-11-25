@@ -1,16 +1,16 @@
 # Red Hat Advanced Cluster Management and OpenShift GitOps
 
-An effective way to manage OpenShift Gitops instances with RHACM.
+An effective way to manage OpenShift Gitops instances and infrastructure configuration policies with RHACM.
 
 ## Why this approach is worth considering
 This repo is designed to enhance GitOps approach leveraged by OpenShift GitOps
-in a multi-cluster environment with business continuity process managed by RHACM.
+in a multi-cluster environment.
 
 ## How to use this repository
 This is a boilerplate repository to quickly set up the initial resources. \
 It provides:
   * Folder-based structure model
-  * RHACM objects
+  * RHACM objects 
   * OpenShift GitOps example objects
 
 To start using this repo you can fork it and adapt it to your environment.
@@ -38,7 +38,7 @@ To use this repo you need to have in your enviroment:
 * Login into RHACM Hub cluster.
 * Deploy this repository on RHACM:
   ```
-  clone repository because is not the main branch
+  clone repository
   navigate to root folder 
   oc apply -k rhacm-gitops/rhacm-manifests/overlays/prod/
   ```
@@ -54,4 +54,6 @@ To use this repo you need to have in your enviroment:
     * HTPasswd Identity Provider configuration; 
     * Cluster Admin role binding configuration;
     * Kubeadmin user deletion;  
+    * Monitoring stack configuration; 
+    * Disable project self-provisioning.
 

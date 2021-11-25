@@ -6,7 +6,7 @@ resources:
   - placementrule-openshift-gitops.yaml
   - subscription-openshift-gitops-apps.yaml
 
-patchesJson6902:
+patches:
 - path: placementrule-infrastructure-prod-policies.yaml
   target: 
     group: apps.open-cluster-management.io
