@@ -9,7 +9,7 @@ metadata:
     apps.open-cluster-management.io/reconcile-rate: high
   annotations:
     apps.open-cluster-management.io/deployables: ''
-    apps.open-cluster-management.io/git-branch: main
+    apps.open-cluster-management.io/git-branch: lab
     apps.open-cluster-management.io/git-current-commit: ''
     apps.open-cluster-management.io/git-path: gitops-manifests/prod
     apps.open-cluster-management.io/reconcile-option: replace
