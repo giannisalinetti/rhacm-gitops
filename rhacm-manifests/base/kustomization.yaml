@@ -5,9 +5,5 @@ resources:
   - channel-openshift-gitops.yaml
   - application-openshift-gitops.yaml
   - placementrule-infrastructure-policies.yaml
-  - policy/policy-auth-provider.yaml
-  - policy/policy-cluster-admin.yaml
-  - policy/policy-remove-kubeadmin.yaml
-  - policy/policy-disable-project-self-provisioning.yaml
   - policy/policy-monitoring-configmap.yaml
   - policy/binding-policy.yaml
